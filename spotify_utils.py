@@ -91,26 +91,3 @@ def calculate_total_listening_time(tracks):
     hours, remainder = divmod(total_duration_s, 3600)  # get hours and remainder in seconds
     minutes, seconds = divmod(remainder, 60)  # get minutes and seconds
     return int(hours), int(minutes), int(seconds)
-
-# token = get_token()
-# result = search_for_artist(token, "Local Train")
-# artist_id = result["id"]
-# print(f"Artist id: {artist_id}")
-# top_tracks = get_top_tracks_by_artist(token, artist_id)
-
-# all_tracks = get_all_tracks_by_artist(token, artist_id)
-
-# number_of_songs = len(all_tracks)
-# print(f"Total number of songs: {number_of_songs}")
-
-# hours, minutes, seconds = calculate_total_listening_time(all_tracks)
-# print(f"Total listening time for all tracks: {hours} hours, {minutes} minutes, and {seconds} seconds")
-
-
-
-
-# for idx, track in enumerate(top_tracks):
-#     print(f"{idx+1}. {track['name']}")
-
-# minutes, seconds = calculate_total_listening_time(top_tracks)
-# print(f"Total listening time for top tracks: {minutes} minutes and {seconds:.0f} seconds")
