@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Track Info</title>
+</head>
+<body>
+    <h1>Search for an Artist</h1>
+    <form method="POST">
+        <label for="artist_name">Artist Name:</label>
+        <input type="text" id="artist_name" name="artist_name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if artist_name %}
+        <h2>Results for {{ artist_name }}</h2>
+        <p>Total number of songs: {{ number_of_songs }}</p>
+        <p>Total listening time: {{ hours }} hours, {{ minutes }} minutes, and {{ seconds }} seconds</p>
+
+        <h3>Top Tracks</h3>
+        <ul>
+            {% for track in top_tracks %}
+                <li>{{ loop.index }}. {{ track.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
