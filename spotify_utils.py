@@ -1,15 +1,12 @@
 #spotify_utils.py
 
-from dotenv import load_dotenv
-import os
+import streamlit as st
 import base64
 from requests import post, get
 import json
 
-load_dotenv()
-
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
+client_id = st.secrets["CLIENT_ID"]
+client_secret = st.secrets["CLIENT_SECRET"]
 
 def get_token():
     auth_string = client_id + ":" + client_secret
@@ -26,8 +23,8 @@ def get_token():
     result = post(url, headers=headers, data=data)
     json_result = json.loads(result.content)
     token = json_result["access_token"]
-    return token 
-
+    return token
+    
 def get_auth_header(token):
     return {"Authorization": "Bearer " + token}
  
