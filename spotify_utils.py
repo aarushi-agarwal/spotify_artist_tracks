@@ -1,3 +1,5 @@
+#spotify_utils.py
+
 from dotenv import load_dotenv
 import os
 import base64
@@ -91,3 +93,4 @@ def calculate_total_listening_time(tracks):
     hours, remainder = divmod(total_duration_s, 3600)  # get hours and remainder in seconds
     minutes, seconds = divmod(remainder, 60)  # get minutes and seconds
     return int(hours), int(minutes), int(seconds)
+

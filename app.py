@@ -1,3 +1,4 @@
+# app.py
 from flask import Flask, render_template, request
 from spotify_utils import get_token, search_for_artist, get_all_tracks_by_artist, calculate_total_listening_time, get_top_tracks_by_artist
 
